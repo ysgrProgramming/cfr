@@ -12,7 +12,7 @@ class DarumaVisualizer(Visualizer):
         print(f"state: {state}")
 
     def random(self):
-        state = self.game.init_state
+        state,  = self.game.init_state
         while self.game.evaluate_state(state) is None:
             self.visualize(state)
-            state = random.choices([s for s in self.game.find_next_states(state)], k=1)[0]
+            state = random.choices([s for s in self.game.find_next_states(state, p)], k=1)[0]
