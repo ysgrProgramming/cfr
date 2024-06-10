@@ -48,8 +48,8 @@ class Model():
         else:
             info2_idx = self.info_to_idx_dict[hash2]
         
-        self.idx_to_nodes_list[info1_idx].add(dhash)
-        self.idx_to_nodes_list[info2_idx].add(dhash)
+        self.idx_to_nodes_list[info1_idx].add(node_idx)
+        self.idx_to_nodes_list[info2_idx].add(node_idx)
 
         utility = game.evaluate_state(state)
         self.node_to_utility_list.append(utility)
